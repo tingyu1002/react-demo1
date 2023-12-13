@@ -1,58 +1,107 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <div class="container">
-        <!-- 左欄區 -->
-        <div class="header">
-            <h1><img src="./img/logo.png" alt=""></h1>
-            <ul>
-                <li><a href="#">首頁</a></li>
-                <li><a href="#">連結1</a></li>
-                <li><a href="#">連結2</a></li>
-                <li><a href="#">連結3</a></li>
-                <li><a href="#">連結4</a></li>
-                <li><a href="#">連結5</a></li>
-                <li><a href="#">連結6</a></li>
-                <li><a href="#">連結7</a></li>
-            </ul>
-        </div>
-        <!-- 右欄區 -->
-        <div class="content">
-            <p><img src="./img/title_img.png" alt=""></p>
-            <h3>lorem</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta in suscipit maiores, temporibus dolorem quia distinctio quod harum earum laboriosam, perferendis ipsam tenetur nisi nihil enim! Nobis voluptas atque ullam.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam a cupiditate voluptatibus quod. Quod sint aperiam atque a? Possimus ullam voluptatem at cupiditate voluptatum, illo itaque temporibus veniam voluptates iusto!</p>
-            <div class="info">
-                <div class="box b1">
-                    <p><img src="./img/icon1.png" alt=""></p>
-                    <h4>方案一</h4>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati molestias, praesentium suscipit labore nostrum delectus.</p>
-                    <p><a href="#">詳細內容</a></p>
+    <!-- 練習開始 -->
+
+
+    <!-- 步驟一：載入CDN->React, Bable -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- 步驟二：載入root元素 -->
+    <div id="root"></div>
+
+    <!-- 使用JSX，type類型為 "text/babel" -->
+    <script type="text/babel">
+        //建立右欄區元件
+        const Content = () => {
+            return (
+
+                <div className="content">
+                    <p><img src="./img/title_img.png" alt="" /></p>
+                    <h3>lorem</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta in suscipit maiores, temporibus dolorem quia distinctio quod harum earum laboriosam, perferendis ipsam tenetur nisi nihil enim! Nobis voluptas atque ullam.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam a cupiditate voluptatibus quod. Quod sint aperiam atque a? Possimus ullam voluptatem at cupiditate voluptatum, illo itaque temporibus veniam voluptates iusto!</p>
+                    <div className="info">
+                        <div className="box b1">
+                            <p><img src="./img/icon1.png" alt="" /></p>
+                            <h4>方案一</h4>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati molestias, praesentium suscipit labore nostrum delectus.</p>
+                            <p><a href="#">詳細內容</a></p>
+                        </div>
+                        <div className="box b2">
+                            <p><img src="./img/icon2.png" alt="" /></p>
+                            <h4>方案二</h4>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati molestias, praesentium suscipit labore nostrum delectus.</p>
+                            <p><a href="#">詳細內容</a></p>
+                        </div>
+                        <div className="box b3">
+                            <p><img src="./img/icon3.png" alt="" /></p>
+                            <h4>方案三</h4>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati molestias, praesentium suscipit labore nostrum delectus.</p>
+                            <p><a href="#">詳細內容</a></p>
+                        </div>
+                    </div>
+
+                    <div className="footer">
+                        <h2>北商有機蔬果</h2>
+                        <h4>Copyright 2023 &copy; 北商有機蔬果</h4>
+                    </div>
                 </div>
-                <div class="box b2">
-                    <p><img src="./img/icon2.png" alt=""></p>
-                    <h4>方案二</h4>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati molestias, praesentium suscipit labore nostrum delectus.</p>
-                    <p><a href="#">詳細內容</a></p>
+            )
+        }
+
+        //建立左欄區元件
+        const Header = () => {
+            return (
+                <div className="header">
+                    <h1><img src="./img/logo.png" alt="" /></h1>
+                    <ul>
+                        <li><a href="#">首頁</a></li>
+                        <li><a href="#">連結1</a></li>
+                        <li><a href="#">連結2</a></li>
+                        <li><a href="#">連結3</a></li>
+                        <li><a href="#">連結4</a></li>
+                        <li><a href="#">連結5</a></li>
+                        <li><a href="#">連結6</a></li>
+                        <li><a href="#">連結7</a></li>
+                    </ul>
                 </div>
-                <div class="box b3">
-                    <p><img src="./img/icon3.png" alt=""></p>
-                    <h4>方案三</h4>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati molestias, praesentium suscipit labore nostrum delectus.</p>
-                    <p><a href="#">詳細內容</a></p>
+            )
+        }
+
+        // 步驟三：建立 React 元件，字首一定要大寫
+        // class -> clasName
+        // img ->結尾加上「/」
+        function App() {
+            return (
+                <div className="container">
+                    {/*左欄區*/}
+                    <Header />
+
+                    {/*右欄區*/}
+                    <Content/>
                 </div>
-            </div>
-            <div class="footer">
-                <h2>北商有機蔬果</h2>
-                <h4>Copyright 2023 &copy; 北商有機蔬果</h4>   
-            </div>
-        </div>
-    </div>
+            )
+        }
+
+        // 步驟四：渲染元件到根元件上
+        //const el=document.getElementById("root");
+        //const root=ReactDOM.createRoot(el);
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />); //將App元件渲染到root
+    </script>
+
+    <!-- 練習結束 -->
 </body>
+
 </html>
