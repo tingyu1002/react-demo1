@@ -1,0 +1,92 @@
+*{ 
+    padding: 0;
+    margin: 0;
+}
+.container{
+    /* 設定框寬度 */
+    width: 1200px; 
+    margin: 0 auto;  /*上 右 下 左*/
+    /* 設margin前要先給寬度 */
+    display: flex; /*將"蔬果"往右排*/
+}
+/* 左側區 */
+.header{
+    width: 260px;
+    padding: 20px;
+    background-image: url("./img/left_bg.png"); /*設定背景圖*/
+    background-repeat: no-repeat;
+    background-position: center bottom; /*水平置中 中間靠下*/
+    /* background-color: rgb(69, 72, 59); */
+    background-color: #777c6a;
+}
+.header ul{padding: 30px;}
+.header li{list-style: none;}
+.header li a{
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px dotted white; /*設定底線*/
+    /*因為超連結是行內元素，所以沒有寬高範圍*/
+    /*寬高範圍是內容撐開的*/
+    /*若要控制寬高範圍則將超連結轉換成區塊元素*/
+    display: block;
+    text-align: center; /*文字置中*/
+    line-height: 80px; /*行高*/
+}
+/* 右側區 */
+.content{
+    background-color: #cad1ba;
+    width: 820px; /*原900px 但要扣padding左右各40px*/
+    padding: 20px 40px;
+}
+.content h3{
+    font-size: 32px;
+    color: #565d47;
+    text-align: center;
+    /* margin: 20px;
+    margin-bottom: 20px; */
+    margin: 20px 0; 
+}
+.content p{
+    margin-bottom: 20px; /*設定段落下方空格*/
+    font-size: 18px; /*文字大小*/
+}
+.info{
+    /* border: 1px solid red; <-輔助框線 */
+    display: flex;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 20px 0;
+    justify-content: space-between; /*區域平均分配*/
+}
+.info .box{
+    /* border: 1px solid red; */
+    /*border-radius: 10px; 把方形變圓*/
+    width: 220px;
+    padding: 40px 20px;
+}
+.info .b1{background-color: #fed0cd;}
+.info .b2{background-color: #fff3a8;}
+.info .b3{background-color: #c1eab3;}
+.info .box h4{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.info .box a{
+    color: #fff;
+    text-decoration: none;
+    background-color: #565d47;
+    /*padding: 10px 40px; 沒轉成區塊元素的做法*/
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+.footer{
+    background-color:#565d4b;
+    color: #91997e;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px 0;
+}
+.footer h2{margin-bottom: 10px;}
